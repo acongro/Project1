@@ -7,7 +7,6 @@ class RecipeCard extends StatelessWidget {
   final VoidCallback? onLongPress;
   const RecipeCard(
       {super.key, required this.recipe, this.onTap, this.onLongPress});
-
   @override
   Widget build(BuildContext context) {
     return Card(

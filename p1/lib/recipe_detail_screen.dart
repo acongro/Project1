@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
-
 import 'app_state.dart';
 import 'recipe.dart';
 
 class RecipeDetailScreen extends StatelessWidget {
   static const route = '/recipe';
   const RecipeDetailScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     final id = ModalRoute.of(context)!.settings.arguments as String;
     final app = context.watch<AppState>();
     final Recipe recipe = app.byId(id)!;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(recipe.title),

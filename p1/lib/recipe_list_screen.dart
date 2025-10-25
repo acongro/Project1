@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'app_state.dart';
 import 'recipe_card.dart';
 import 'recipe_detail_screen.dart';
@@ -10,7 +9,6 @@ import 'favorites_screen.dart';
 
 class RecipeListScreen extends StatefulWidget {
   const RecipeListScreen({super.key});
-
   @override
   State<RecipeListScreen> createState() => _RecipeListScreenState();
 }
@@ -18,14 +16,12 @@ class RecipeListScreen extends StatefulWidget {
 class _RecipeListScreenState extends State<RecipeListScreen> {
   final _tags = const ['vegetarian', 'vegan', 'gluten-free'];
   String _query = '';
-
   @override
   Widget build(BuildContext context) {
     final app = context.watch<AppState>();
     final filtered = app.recipes
         .where((r) => r.title.toLowerCase().contains(_query.toLowerCase()))
         .toList();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Recipes'),
