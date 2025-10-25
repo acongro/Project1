@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'app_state.dart';
 import 'recipe_list_screen.dart';
 import 'recipe_detail_screen.dart';
@@ -20,7 +19,6 @@ void main() async {
 
 class RecipePlannerApp extends StatelessWidget {
   const RecipePlannerApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     final theme = ThemeData(
@@ -72,7 +70,6 @@ class RecipePlannerApp extends StatelessWidget {
         behavior: SnackBarBehavior.floating,
       ),
     );
-
     return MaterialApp(
       title: 'Recipe Planner',
       debugShowCheckedModeBanner: false,
