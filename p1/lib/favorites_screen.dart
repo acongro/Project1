@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'app_state.dart';
 import 'recipe_detail_screen.dart';
 
 class FavoritesScreen extends StatelessWidget {
   static const route = '/favorites';
   const FavoritesScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     final app = context.watch<AppState>();
     final favs = app.favorites.toList();
-
     return Scaffold(
       appBar: AppBar(title: const Text('Favorites')),
       body: favs.isEmpty
