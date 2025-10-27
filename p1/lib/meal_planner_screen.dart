@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'app_state.dart';
 import 'recipe.dart';
 import 'recipe_detail_screen.dart';
@@ -8,19 +7,16 @@ import 'recipe_detail_screen.dart';
 class MealPlannerScreen extends StatefulWidget {
   static const route = '/planner';
   const MealPlannerScreen({super.key});
-
   @override
   State<MealPlannerScreen> createState() => _MealPlannerScreenState();
 }
 
 class _MealPlannerScreenState extends State<MealPlannerScreen> {
   late DateTime start;
-
   @override
   void initState() {
     super.initState();
     final now = DateTime.now();
-    // Start from Sunday of this week
     start = now.subtract(Duration(days: now.weekday % 7));
   }
 
